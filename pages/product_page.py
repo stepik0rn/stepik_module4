@@ -37,4 +37,4 @@ class ProductPage(BasePage):
         assert price_in_not_text == price, f"Expected price '{price}', got '{price_in_not_text}'"
     
     def should_not_be_success_message(self):
-        self.is_not_element_present(*ProductPageLocators.ADD_NOTIFICATION)
+        assert page.is_not_element_present(*ProductPageLocators.ALERT_SUCCESS), "Success message exists on a page"
